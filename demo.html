@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap Accordion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Bootstrap Accordion, Bootstrap Collapse">
+        <meta name="description" content="Bootstrap Accordion provides an easy way to generate bootstrap's accordion component, easing the pain to write massive html/css codes.">
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="bootstrap-accordion/bootstrap-accordion.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h2>Bootstrap Accordion <small>an easy way to generate bootstrap accordion</small></h2>
+            </header>
+            <div style="margin-bottom: 20px">
+                <p>Supposing the following examples all use this panel object for the first parameter.</p>
+                <pre>
+var panels = [{
+    data: {
+        title: 'Collapse Title 1',
+        body: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.'
+    }
+},{
+    data: {
+        title: 'Collapse Title 2',
+        body: '3 wolf moon officia aute, non cupidatat skateboard dolor brunch.'
+    }
+},{
+    data: {
+        title: 'Collapse Title 3',
+        body: 'Food truck quinoa nesciunt laborum eiusmod.'
+    },
+    options: {
+        collapse: true
+    }
+}];
+                    </pre>
+            </div>
+            <section>
+                <header>
+                    <blockquote>The Easiest & Simplest Call</blockquote>
+                </header>
+                <div>
+                    <pre>$('#accordion').accordion(panels);</pre>
+                </div>
+                <div id="accordion-1"></div>
+            </section>
+            
+            <section>
+                <header>
+                    <blockquote>Controling Maximum Number of Open Panels</blockquote>
+                </header>
+                <div>
+                    <pre>$('#accordion').accordion(panels, {maxOpen: 2});</pre>
+                </div>
+                <div id="accordion-2"></div>
+            </section>
+            
+            <section>
+                <header>
+                    <blockquote>Setting Default Options for Collapses</blockquote>
+                </header>
+                <div>
+                    <pre>$('#accordion').accordion(panels, {collapseDefaults: {style: Collapse.STYLE_PRIMARY}});</pre>
+                </div>
+                <div id="accordion-3"></div>
+            </section>
+            
+            <section>
+                <header>
+                    <blockquote>Collapse</blockquote>
+                </header>
+                <div>
+                    You can also set options for individual collapse. You can find more details in <a href="http://duckisaac.github.com/BootstrapCollapse" target="_blank">Bootstrap Collapse</a>.
+                </div>
+            </section>
+            <br/><br/>
+        </div>
+        
+        <script>
+            $(function(){
+                var panels = [{
+                    data: {
+                        title: 'Collapse Title 1',
+                        body: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.'
+                    }
+                },{
+                    data: {
+                        title: 'Collapse Title 2',
+                        body: '3 wolf moon officia aute, non cupidatat skateboard dolor brunch.'
+                    }
+                },{
+                    data: {
+                        title: 'Collapse Title 3',
+                        body: 'Food truck quinoa nesciunt laborum eiusmod.'
+                    },
+                    options: {
+                        collapse: true
+                    }
+                }/*,{
+                    data: {
+                        title: 'Collapse Title 4',
+                        body: 'Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.'
+                    }
+                },{
+                    data: {
+                        title: 'Collapse Title 5',
+                        body: 'Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.'
+                    }
+                },{
+                    data: {
+                        title: 'Collapse Title 6',
+                        body: 'Ad vegan excepteur butcher vice lomo.'
+                    }
+                },{
+                    data: {
+                        title: 'Collapse Title 7',
+                        body: 'Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven\'t heard of them accusamus labore sustainable VHS.'
+                    },
+                    options: {
+                        collapse: true
+                    }
+                }*/];
+                $('#accordion-1').accordion(panels);
+                $('#accordion-2').accordion(panels, {maxOpen: 2});
+                $('#accordion-3').accordion(panels, {collapseDefaults: {style: Collapse.STYLE_PRIMARY}});
+            });
+            
+        </script>
+    </body>
+</html>
+
