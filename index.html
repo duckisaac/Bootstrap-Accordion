@@ -4,7 +4,10 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Bootstrap Accordion : An easy way to generate bootstrap accordions">
+    <meta name="keywords" content="Bootstrap Accordion, Bootstrap Collapse">
+    <meta name="description" content="Bootstrap Accordion provides an easy way to generate bootstrap's accordion component, easing the pain to write massive html/css codes.">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="/javascripts/bootstrap-accordion.js"></script>
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -31,10 +34,98 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>
-<a id="bootstrap-accordion" class="anchor" href="#bootstrap-accordion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bootstrap-Accordion</h1>
-
-<p>An easy way to generate bootstrap accordions</p>
+        <div style="margin-bottom: 20px">
+                <p>Supposing the following examples all use this panel object for the first parameter. (Bootstrap Accordion requires Jquery)</p>
+                <pre>
+var panels = [{
+    data: {
+        title: 'Collapse Title 1',
+        body: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.'
+    }
+},{
+    data: {
+        title: 'Collapse Title 2',
+        body: '3 wolf moon officia aute, non cupidatat skateboard dolor brunch.'
+    }
+},{
+    data: {
+        title: 'Collapse Title 3',
+        body: 'Food truck quinoa nesciunt laborum eiusmod.'
+    },
+    options: {
+        collapse: true
+    }
+}];
+                    </pre>
+            </div>
+            <section>
+                <header>
+                    <blockquote>The Easiest & Simplest Call</blockquote>
+                </header>
+                <div>
+                    <pre>$('#accordion').accordion(panels);</pre>
+                </div>
+                <div id="accordion-1"></div>
+            </section>
+            
+            <section>
+                <header>
+                    <blockquote>Controling Maximum Number of Open Panels</blockquote>
+                </header>
+                <div>
+                    <pre>$('#accordion').accordion(panels, {maxOpen: 2});</pre>
+                </div>
+                <div id="accordion-2"></div>
+            </section>
+            
+            <section>
+                <header>
+                    <blockquote>Setting Default Options for Collapses</blockquote>
+                </header>
+                <div>
+                    <pre>$('#accordion').accordion(panels, {collapseDefaults: {style: Collapse.STYLE_PRIMARY}});</pre>
+                </div>
+                <div id="accordion-3"></div>
+            </section>
+            
+            <section>
+                <header>
+                    <blockquote>Collapse</blockquote>
+                </header>
+                <div>
+                    You can also set options for individual collapse. You can find more details in <a href="http://duckisaac.github.com/BootstrapCollapse" target="_blank">Bootstrap Collapse</a>.
+                </div>
+            </section>
+            <br/><br/>
+        </div>
+        
+        <script>
+            $(function(){
+                var panels = [{
+                    data: {
+                        title: 'Collapse Title 1',
+                        body: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.'
+                    }
+                },{
+                    data: {
+                        title: 'Collapse Title 2',
+                        body: '3 wolf moon officia aute, non cupidatat skateboard dolor brunch.'
+                    }
+                },{
+                    data: {
+                        title: 'Collapse Title 3',
+                        body: 'Food truck quinoa nesciunt laborum eiusmod.'
+                    },
+                    options: {
+                        collapse: true
+                    }
+                }];
+                $('#accordion-1').accordion(panels);
+                $('#accordion-2').accordion(panels, {maxOpen: 2});
+                $('#accordion-3').accordion(panels, {collapseDefaults: {style: Collapse.STYLE_PRIMARY}});
+            });
+            
+        </script>
       </section>
     </div>
 
